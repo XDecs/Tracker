@@ -1,7 +1,3 @@
-%h1 Editing task
-
-= render 'form'
-
-= link_to 'Show', @task
-\|
-= link_to 'Back', tasks_path
+- model_class = @task.class
+%h1=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human, :default => "Edit #{model_class.model_name.human}")
+= render :partial => "form"

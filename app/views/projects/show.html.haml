@@ -1,24 +1,32 @@
-%p#notice= notice
+- model_class = @project.class
+%h1=t '.title', :default => model_class.model_name.human
 
 %p
-  %b Title:
+  %strong= model_class.human_attribute_name(:title) + ':'
+  %br
   = @project.title
 %p
-  %b Description:
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
   = @project.description
 %p
-  %b Begin time:
+  %strong= model_class.human_attribute_name(:begin_time) + ':'
+  %br
   = @project.begin_time
 %p
-  %b End time:
+  %strong= model_class.human_attribute_name(:end_time) + ':'
+  %br
   = @project.end_time
 %p
-  %b Priority:
+  %strong= model_class.human_attribute_name(:priority_id) + ':'
+  %br
   = @project.priority_id
 %p
-  %b User:
+  %strong= model_class.human_attribute_name(:user_id) + ':'
+  %br
   = @project.user_id
 
-= link_to 'Edit', edit_project_path(@project)
-\|
-= link_to 'Back', projects_path
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), projects_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_project_path(@project), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), project_path(@project), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'

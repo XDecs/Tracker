@@ -1,33 +1,44 @@
-%p#notice= notice
+- model_class = @task.class
+%h1=t '.title', :default => model_class.model_name.human
 
 %p
-  %b Title:
+  %strong= model_class.human_attribute_name(:title) + ':'
+  %br
   = @task.title
 %p
-  %b Description:
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
   = @task.description
 %p
-  %b Begintime:
+  %strong= model_class.human_attribute_name(:beginTime) + ':'
+  %br
   = @task.beginTime
 %p
-  %b Endtime:
+  %strong= model_class.human_attribute_name(:endTime) + ':'
+  %br
   = @task.endTime
 %p
-  %b Difficulty:
+  %strong= model_class.human_attribute_name(:difficulty) + ':'
+  %br
   = @task.difficulty
 %p
-  %b User:
+  %strong= model_class.human_attribute_name(:user_id) + ':'
+  %br
   = @task.user_id
 %p
-  %b Project:
+  %strong= model_class.human_attribute_name(:project_id) + ':'
+  %br
   = @task.project_id
 %p
-  %b Tasktype:
+  %strong= model_class.human_attribute_name(:TaskType_id) + ':'
+  %br
   = @task.TaskType_id
 %p
-  %b Projectstatus:
+  %strong= model_class.human_attribute_name(:ProjectStatus) + ':'
+  %br
   = @task.ProjectStatus
 
-= link_to 'Edit', edit_task_path(@task)
-\|
-= link_to 'Back', tasks_path
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), tasks_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_task_path(@task), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), task_path(@task), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'

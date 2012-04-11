@@ -1,28 +1,28 @@
-= form_for @project do |f|
-  -if @project.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
-      %ul
-        - @project.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :begin_time
-    = f.date_select :begin_time
-  .field
-    = f.label :end_time
-    = f.date_select :end_time
-  .field
-    = f.label :priority_id
-    = f.number_field :priority_id
-  .field
-    = f.label :user_id
-    = f.number_field :user_id
-  .actions
-    = f.submit 'Save'
+= form_for @project, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :title, :class => 'control-label'
+    .controls
+      = f.text_field :title, :class => 'text_field'
+  .control-group
+    = f.label :description, :class => 'control-label'
+    .controls
+      = f.text_area :description, :class => 'text_area'
+  .control-group
+    = f.label :begin_time, :class => 'control-label'
+    .controls
+      = f.date_select :begin_time, :class => 'date_select'
+  .control-group
+    = f.label :end_time, :class => 'control-label'
+    .controls
+      = f.date_select :end_time, :class => 'date_select'
+  .control-group
+    = f.label :priority_id, :class => 'control-label'
+    .controls
+      = f.number_field :priority_id, :class => 'number_field'
+  .control-group
+    = f.label :user_id, :class => 'control-label'
+    .controls
+      = f.number_field :user_id, :class => 'number_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), projects_path, :class => 'btn'
