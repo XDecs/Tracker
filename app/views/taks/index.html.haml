@@ -1,0 +1,35 @@
+%h1 Listing taks
+
+%table
+  %tr
+    %th Title
+    %th Description
+    %th Begin time
+    %th End time
+    %th Difficulty
+    %th User
+    %th Priority
+    %th Task type
+    %th Status
+    %th
+    %th
+    %th
+
+  - @taks.each do |tak|
+    %tr
+      %td= tak.title
+      %td= tak.description
+      %td= tak.begin_time
+      %td= tak.end_time
+      %td= tak.difficulty
+      %td= tak.User_id
+      %td= tak.priority_id
+      %td= tak.task_type_id
+      %td= tak.status
+      %td= link_to 'Show', tak
+      %td= link_to 'Edit', edit_tak_path(tak)
+      %td= link_to 'Destroy', tak, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Tak', new_tak_path

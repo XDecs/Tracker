@@ -1,0 +1,29 @@
+%h1 Listing projects
+
+%table
+  %tr
+    %th Title
+    %th Description
+    %th Begin time
+    %th End time
+    %th Priority
+    %th User
+    %th
+    %th
+    %th
+
+  - @projects.each do |project|
+    %tr
+      %td= project.title
+      %td= project.description
+      %td= project.begin_time
+      %td= project.end_time
+      %td= project.priority_id
+      %td= project.user_id
+      %td= link_to 'Show', project
+      %td= link_to 'Edit', edit_project_path(project)
+      %td= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Project', new_project_path

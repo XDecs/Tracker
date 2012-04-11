@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  begin_time: 2012-04-10
+  end_time: 2012-04-10
+  difficulty: 1
+  User_id: 1
+  priority_id: 1
+  task_type_id: 1
+  status: false
+
+two:
+  title: MyString
+  description: MyText
+  begin_time: 2012-04-10
+  end_time: 2012-04-10
+  difficulty: 1
+  User_id: 1
+  priority_id: 1
+  task_type_id: 1
+  status: false

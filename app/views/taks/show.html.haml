@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @tak.title
+%p
+  %b Description:
+  = @tak.description
+%p
+  %b Begin time:
+  = @tak.begin_time
+%p
+  %b End time:
+  = @tak.end_time
+%p
+  %b Difficulty:
+  = @tak.difficulty
+%p
+  %b User:
+  = @tak.User_id
+%p
+  %b Priority:
+  = @tak.priority_id
+%p
+  %b Task type:
+  = @tak.task_type_id
+%p
+  %b Status:
+  = @tak.status
+
+= link_to 'Edit', edit_tak_path(@tak)
+\|
+= link_to 'Back', taks_path
