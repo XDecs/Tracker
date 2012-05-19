@@ -4,6 +4,10 @@ gem 'rails', '3.1.3'
 gem "haml-rails"
 gem "twitter-bootstrap-rails"
 
+group :production do gem 'pg' end
+
+group :test, :development do gem 'sqlite3' end # gem 'mysql2' 
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 

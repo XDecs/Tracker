@@ -1,4 +1,4 @@
-class CreateTaks < ActiveRecord::Migration
+class CreateTask < ActiveRecord::Migration
   def change
     create_table :taks do |t|
       t.string :title
